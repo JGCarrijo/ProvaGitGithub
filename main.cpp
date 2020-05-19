@@ -27,34 +27,54 @@ int main()
     else if (score > 3000 && compra <= 2){
         Pontos = 20;
     }
+
     else if (score == 3000 && compra >= 2){
         Pontos = 40;
     }
+
     else {
         Pontos = 60;
     }
-    cout << endl <<"Score de volume de compras = " << Pontos << " pontos" << endl;
+
+    cout << endl << endl <<"Score de volume de compras = " << Pontos << " pontos" << endl;
 
 
-    if (atrasos > 1 || compra == 0){
+    if (atrasos > 1 ||compra == 0){
         Pontos2 = 0;
     }
+
     else if (compra >= 1 && atrasos == 1){
         Pontos2 = 15;
     }
+
     else if (compra >= 1 && atrasos == 0){
         Pontos2 = 30;
     }
+
     cout << endl << endl << "Score de inadimplencia = " << Pontos2 << " pontos" << endl;
 
     if (compra > 0 && TipoPagamento == "D"){
         Pontos3 = 5;
     }
+
     if (compra > 0 && (TipoPagamento == "C" || TipoPagamento == "B")){
         Pontos3 = 10;
     }
 
     cout << "Score de forma de pagamento = " << Pontos3 << " pontos" << endl;
+
+
+    if (0 < Pontos + Pontos2 + Pontos3 <= 25){
+        cout << endl << "Classificacao final = CLIENTE BRONZE" << endl;
+    }
+
+    else if (Pontos + Pontos2 + Pontos3 > 25 && Pontos + Pontos2 + Pontos3 < 75){
+        cout << endl << "Classificacao final = CLIENTE PRATA" << endl;
+    }
+
+    else if (Pontos + Pontos2 + Pontos3 < 75){
+        cout << endl << "Classificacao final = CLIENTE OURO" << endl;
+    }
 
 
     return 0;
