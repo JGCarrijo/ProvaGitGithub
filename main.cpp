@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int compra, atrasos, TipoPagamento;
-    double TicketMedio;
+    double TicketMedio, score, pontos;
 
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------" << endl;
@@ -20,6 +20,21 @@ int main()
     cin >> atrasos;
     cout << "A maioria das compras foi em dinheiro, cartao, ou boleto (D/C/B)? ";
     cin >> TipoPagamento;
+
+    if (score == 0){
+        pontos = 0;
+    }
+    else if (score > 3000){
+        pontos = 20;
+    }
+    else if (score == 3000){
+        pontos = 40;
+    }
+    else {
+        pontos = 60;
+    }
+
+    cout << endl <<"Score de volume de compras = " << pontos << " pontos" << endl;
 
     return 0;
 }
